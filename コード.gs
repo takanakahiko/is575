@@ -41,6 +41,7 @@ function is575(text) { //"見舞客元気過ぎても疲れ出る"
     var init_flag = true;
     for(var i = 0; i < words.length-k; i++) {
       var reading = words[k+i].getChild("reading",namespace).getText();
+      if(reading.match(/[a-zA-Z]/)) break;
       var num_character = ["0","1","2","3","4","5","6","7","8","9","10"];
       var num_yomi = ["ぜろ","いち","に","さん","よん","ご","ろく","なな","はち","きゅう","じゅう"];
       for(var j = 0; j < num_character.length; j++) reading = reading.replace(num_character[j],num_yomi[j]);
